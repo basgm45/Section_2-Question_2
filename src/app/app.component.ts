@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 
      this.http.get('https://api.publicapis.org/categories').subscribe(response => {
       this.dataCatagories = response;
-      console.log(this.dataCatagories);
+      // console.log(this.dataCatagories);
 
     })
 
