@@ -1,0 +1,39 @@
+<div id="container">
+  <input id="input" pInputText type="text"  placeholder="Search keyword"  (keyup)="myFunction($event)" />
+</div>
+<!-- <table id="myTable">
+    <tr class="header">
+      <th style="width:70%;">Name</th>
+    </tr>
+    <tr  *ngFor="let data of dataCatagories">
+      <td>{{data}}</td>
+    </tr>
+  </table> -->
+  <!-- (keyup)="search($event)" -->
+  <div class="card">
+    <p-table #dt1 id="myTable"  [value]="dataCatagories" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5,10]">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+            </div>
+        </ng-template>
+
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="text-align: center;">Data</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-dataCatagories >
+          <tr id="dataCal" >
+              <td  >{{dataCatagories}}</td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+          <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+          <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+      </ng-template>
+  </p-table>
+</div>
+
